@@ -1,0 +1,22 @@
+{
+  "name": "hyperapp",
+  "version": "1.0.0",
+  "description": "simple app with hyperhtml",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "hyperHTML",
+    "Observables"
+  ],
+  "author": "Federico Sordillo",
+  "license": "ISC",
+  "devDependencies": {
+    "hyperhtml": "^0.10.2",
+    "rollup": "^0.41.6",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  }
+}
