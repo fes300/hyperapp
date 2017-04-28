@@ -1,6 +1,20 @@
 (function () {
 'use strict';
 
+var model = {
+  name: 'my tentative app',
+  count: 0
+};
+
+var logics = {
+  onclick() {
+    if (model.count < 2) {
+      model.count ++;
+    }
+    app$1();
+  }
+};
+
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
@@ -551,19 +565,24 @@ var hyperHTML = (function () {'use strict';
 try { module.exports = hyperHTML; } catch(o_O) {}
 });
 
-console.log(hyperhtml);
-console.log(document.getElementById('root'));
+var render = hyperhtml.bind(document.getElementById('root'));
 
-function tick (render) {
-  render`
-    <div>
-      <h1>Hello, world!</h1>
-      <h2>It is ${new Date().toLocaleTimeString()}.</h2>
-    </div>
-                          `;
+function app(render$$1, model$$1) {
+  render$$1`
+  <div>
+    <h1>Hello, ${model$$1.name}!</h1>
+    <h2>Last render: ${new Date().toLocaleTimeString()}.</h2>
+    <h2>count: ${model$$1.count}.</h2>
+    <div
+      onclick="${logics.onclick}"
+    > button to click </div>
+  </div>
+  `;
 }
-setInterval(tick, 1000,
-              hyperhtml.bind(document.getElementById('root'))
-           );
+
+
+var app$1 = app.bind(null, render, model);
+
+app$1();
 
 }());
