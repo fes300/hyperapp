@@ -3,18 +3,18 @@ import model from './model'
 import render from './render'
 
 
-function app(render, model) {
+function app(render, store) {
   render`
   <div>
-    <h1>Hello, ${model.name}!</h1>
+    <h1>Hello, ${model(store).name}!</h1>
     <h2>Last render: ${new Date().toLocaleTimeString()}.</h2>
-    <h2>count: ${model.count}.</h2>
+    <h2>count: ${model(store).count}.</h2>
     <div
-      onclick="${logics.onclick}"
+      onclick="${logics.onclick.bind(null, store)}"
     > button to click </div>
   </div>
   `
 }
 
 
-export default app.bind(null, render, model)
+export default app.bind(null, render)

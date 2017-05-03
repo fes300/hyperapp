@@ -1,4 +1,10 @@
 import app from './components/App'
+import store from './redux/configureStore'
 
+function renderApp () {
+  app(store)
+}
 
-app()
+store.subscribe(renderApp)
+
+renderApp()

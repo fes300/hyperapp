@@ -1,11 +1,7 @@
-import model from './model'
-import app from './'
+import { fetchUser } from '../../redux/modules/Users/index.js'
 
 export default {
-  onclick() {
-    if (model.count < 2) {
-      model.count ++
-    }
-    app()
+  onclick (store) {
+    store.dispatch(fetchUser('redux-observable'))
   }
 }
