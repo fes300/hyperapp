@@ -5,5 +5,6 @@ simple app built using hyperHTML
 ### What did I use? ###
 
 * hyperHTML
-* Observables proposal polyfill
+* RxJS
+* redux-observable
 * rollup
