@@ -7,6 +7,8 @@ function app (render, store) {
   const usersToRender = Object.keys(users).length > 0
     ? JSON.stringify(users) : ''
 
+  console.log('rendering App...')
+
   render`
   <div>
     <h1>Hello, app!</h1>
