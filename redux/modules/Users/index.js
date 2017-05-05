@@ -3,8 +3,8 @@ import Rx from 'rxjs/Rx'
 const { ajax } = Rx.Observable
 
 // ACTION TYPES
-const FETCH_USER = 'FETCH_USER'
-const FETCH_USER_FULFILLED = 'FETCH_USER_FULFILLED'
+const FETCH_USER = 'modules/Users/FETCH_USER'
+const FETCH_USER_FULFILLED = 'modules/Users/FETCH_USER_FULFILLED'
 
 // ACTION CREATORS
 export const fetchUser = username => ({ type: FETCH_USER, payload: username })
@@ -20,7 +20,8 @@ export const fetchUserEpic = action$ =>
 
 // REDUCER
 export default function reducer (state = {}, action) {
-  console.log(state, action);
+  console.log(action);
+
   switch (action.type) {
     case FETCH_USER_FULFILLED:
       return {

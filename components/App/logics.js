@@ -1,7 +1,17 @@
-import { fetchUser } from '../../redux/modules/Users/index.js'
+import { fetchUser } from '../../redux/modules/Users'
+import { ping } from '../../redux/modules/Ping'
 
 export default {
-  onclick (store) {
-    store.dispatch(fetchUser('redux-observable'))
+  onclick (dispatch, type) {
+    switch (type) {
+      case 'fetch':
+        dispatch(fetchUser('redux-observable'))
+        break
+      case 'ping':
+        dispatch(ping())
+        break
+      default:
+      // no default
+    }
   }
 }
