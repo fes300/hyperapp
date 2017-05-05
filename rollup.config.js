@@ -40,7 +40,7 @@ export default {
     replace({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
-    serve('dist')
-    // livereload('dist'),
+    serve('dist'),
+    livereload('dist')
   ]
 }

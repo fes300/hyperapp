@@ -2,8 +2,7 @@ import logics from './logics'
 import model from './model'
 import render from './render'
 
-
-function app(render, store) {
+function app (render, store) {
   render`
   <div>
     <h1>Hello, ${model(store).name}!</h1>
@@ -15,6 +14,5 @@ function app(render, store) {
   </div>
   `
 }
-
 
 export default app.bind(null, render)

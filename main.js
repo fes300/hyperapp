@@ -6,5 +6,4 @@ function renderApp () {
 }
 
 store.subscribe(renderApp)
-
 renderApp()
